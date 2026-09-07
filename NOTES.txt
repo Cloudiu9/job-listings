@@ -6,7 +6,8 @@
 
 
 - IMP TODO
-- Finish job component. (make it dynamic from data.json)
+- --DONE-- Finish job component. (make it dynamic from data.json)
+- Implement filtering.
 
 # Notes:
 - app folder is only for routes
