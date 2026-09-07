@@ -1,0 +1,12 @@
+- IDEAS TODO
+- eventually have a 'scrape' button that loads live data from relevant sites instead of using data.json (or better alternative?)
+- option to save jobs in profile?
+
+- BUGS
+
+
+- IMP TODO
+- Finish job component. (make it dynamic from data.json)
+
+# Notes:
+- app folder is only for routes
