@@ -19,7 +19,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="en" className={`h-full antialiased`}>
       <body className={`${leagueSpartan.className} min-h-full`}>
         <div className="min-h-dvh bg-zinc-700 text-zinc-300">
-          <div className="mx-auto flex min-h-dvh w-full max-w-275 flex-col bg-page-bg">
+          <div className="mx-auto flex min-h-dvh w-full flex-col bg-page-bg">
             <Header />
 
             <main className="flex-1 px-4 py-8 sm:px-6 sm:py-10">

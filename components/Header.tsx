@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className="isolate relative flex overflow-hidden h-20 items-center justify-between bg-main px-4 sm:px-6">
+    <header className="isolate relative flex overflow-hidden h-30 pb-5 items-center justify-between bg-main px-4 sm:px-6">
       <Image
         src="bg-header-desktop.svg"
         alt="Background"

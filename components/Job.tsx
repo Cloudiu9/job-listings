@@ -1,5 +1,6 @@
 import Image from "next/image";
 import data from "../data.json";
+import Tag from "./Tag";
 
 export default async function Job() {
   return (
@@ -7,7 +8,7 @@ export default async function Job() {
       {data.map((job, idx) => (
         <div
           key={idx}
-          className="flex flex-col md:flex-row md:justify-between md:items-center bg-white py-8 px-8 md:p-6 mt-4 mb-12 md:mb-4 shadow-lg rounded-xl border-l-main border-l-4 relative"
+          className="flex flex-col md:flex-row md:justify-between md:items-center bg-white py-8 px-8 md:p-6 mb-12 md:mb-4 shadow-lg rounded-xl border-l-main border-l-4 relative"
         >
           {/* main front part grouping */}
           <div className="flex flex-col md:flex-row gap-4">
@@ -55,26 +56,11 @@ export default async function Job() {
 
           {/* end part grouping */}
           <div className="flex flex-wrap gap-2 items-center text-sm font-bold text-main ">
-            <div
-              className="py-1 px-2 bg-page-bg hover:text-white hover:cursor-pointer hover:bg-main"
-              id="role"
-            >
-              <span>{job.role}</span>
-            </div>
-            <div
-              className="py-1 px-2 bg-page-bg hover:text-white hover:cursor-pointer hover:bg-main"
-              id="level"
-            >
-              <span>{job.level}</span>
-            </div>
+            <Tag tag={job.role} close={false} />
+            <Tag tag={job.level} close={false} />
 
             {job.languages.map((language, idx) => (
-              <span
-                key={idx}
-                className="py-1 px-2 bg-page-bg hover:text-white hover:cursor-pointer hover:bg-main"
-              >
-                {language}
-              </span>
+              <Tag key={idx} tag={language} close={false} />
             ))}
           </div>
         </div>
