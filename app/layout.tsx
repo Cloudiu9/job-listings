@@ -3,6 +3,8 @@ import { League_Spartan } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { Provider } from "react-redux";
+import { store } from "@/redux/store";
 
 const leagueSpartan = League_Spartan({
   subsets: ["latin"],
@@ -20,13 +22,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className={`${leagueSpartan.className} min-h-full`}>
         <div className="min-h-dvh bg-zinc-700 text-zinc-300">
           <div className="mx-auto flex min-h-dvh w-full flex-col bg-page-bg">
-            <Header />
+            <Provider store={store}>
+              <Header />
 
-            <main className="flex-1 px-4 py-8 sm:px-6 sm:py-10">
-              {children}
-            </main>
+              <main className="flex-1 px-4 py-8 sm:px-6 sm:py-10">
+                {children}
+              </main>
 
-            <Footer />
+              <Footer />
+            </Provider>
           </div>
         </div>
       </body>

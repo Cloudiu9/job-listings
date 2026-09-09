@@ -1,8 +1,12 @@
+"use client";
+
 import Image from "next/image";
+
+// TODO make tags bigger on full desktop size, current font size is too small
 
 interface TagProps {
   tag: string;
-  close: boolean;
+  close?: boolean;
 }
 
 export default function Tag({ tag, close = false }: TagProps) {

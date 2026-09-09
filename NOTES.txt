@@ -15,6 +15,13 @@
 # Notes:
 ## NextJS:
 - app folder is only for routes
+- SSR Server Side Rendering: a new page is rendered from scratch for every request. 
+- SSG Static Site Generation: the page is pre rendered ahead of time and the same file is sent to everyone per request. 
+- RSC React Server Components: the server helps make the page faster by doing some of the work before sending it to your browser. 
+- SPA Single Page Application: the entire app lives inside one document but parts of the document may be updated with individual requests. 
 
 ## Tailwind:
 - add 'hover' to parent div to flag container as hover target, then add group-hover:*effect* to a specific part so only it gets affected
+
+## Redux:
+- A store is an object that holds the whole state tree of the application. The only way to change the state inside it is to dispatch an action on it, which triggers the root reducer function to calculate the new state.

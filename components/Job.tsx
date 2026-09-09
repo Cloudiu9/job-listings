@@ -56,11 +56,11 @@ export default async function Job() {
 
           {/* end part grouping */}
           <div className="flex flex-wrap gap-2 items-center text-sm font-bold text-main ">
-            <Tag tag={job.role} close={false} />
-            <Tag tag={job.level} close={false} />
+            <Tag tag={job.role} />
+            <Tag tag={job.level} />
 
             {job.languages.map((language, idx) => (
-              <Tag key={idx} tag={language} close={false} />
+              <Tag key={idx} tag={language} />
             ))}
           </div>
         </div>
