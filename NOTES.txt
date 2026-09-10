@@ -25,3 +25,30 @@
 
 ## Redux:
 - A store is an object that holds the whole state tree of the application. The only way to change the state inside it is to dispatch an action on it, which triggers the root reducer function to calculate the new state.
+
+- Use configureStore to create the store. 
+export const store = configureStore({
+  reducer: {
+    filters: filtersReducer, // filters is key in global state obj
+  },
+});
+
+- Use createSlice to create the functionality (reducers) for the store.
+const filtersSlice = createSlice({
+  name: "filters",
+  initialState,
+  reducers: {
+    // can safely use .push() to mutate state (redux uses Immer)
+    // Action to add a tag to state array
+    addTag: (state, action: PayloadAction<string>) => {
+      if (!state.selectedFilters.includes(action.payload))
+        state.selectedFilters.push(action.payload);
+    },
+  }
+})
+
+- Use dispatch() to make use of the defined reducers.
+  const dispatch = useDispatch();
+  dispatch(addTag(tag));
+
+- Use console.log(store.getState()); to check the state.

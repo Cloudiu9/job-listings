@@ -8,7 +8,7 @@ export default async function Job() {
       {data.map((job, idx) => (
         <div
           key={idx}
-          className="flex flex-col md:flex-row md:justify-between md:items-center bg-white py-8 px-8 md:p-6 mb-12 md:mb-4 shadow-lg rounded-xl border-l-main border-l-4 relative"
+          className="flex flex-col md:flex-row md:justify-between md:items-center bg-white py-8 px-8  mt-12 md:mt-0 md:p-6 mb-12 md:mb-4 shadow-lg rounded-xl border-l-main border-l-4 relative"
         >
           {/* main front part grouping */}
           <div className="flex flex-col md:flex-row gap-4">
@@ -45,7 +45,7 @@ export default async function Job() {
                 {job.position}
               </h2>
 
-              <div className="flex gap-3 text-sm font-semibold text-gray-400">
+              <div className="flex gap-2 text-xs font-semibold text-gray-400">
                 <p>{job.postedAt}</p>·<p>{job.contract}</p>·
                 <p>{job.location}</p>
               </div>
@@ -55,7 +55,7 @@ export default async function Job() {
           <hr className="md:hidden my-3 w-full" />
 
           {/* end part grouping */}
-          <div className="flex flex-wrap gap-2 items-center text-sm font-bold text-main ">
+          <div className="flex flex-wrap md:ml-6 gap-2 items-center font-bold text-main ">
             <Tag tag={job.role} />
             <Tag tag={job.level} />
 
