@@ -1,6 +1,7 @@
 import Image from "next/image";
 import data from "../data.json";
 import Tag from "./Tag";
+import JobList from "./JobList";
 
 export default async function Job() {
   return (
@@ -10,7 +11,9 @@ export default async function Job() {
           key={idx}
           className="flex flex-col md:flex-row md:justify-between md:items-center bg-white py-8 px-8  mt-12 md:mt-0 md:p-6 mb-12 md:mb-4 shadow-lg rounded-xl border-l-main border-l-4 relative"
         >
+          <JobList data={data} />
           {/* main front part grouping */}
+          {/* <JobList data={data} /> */}
           <div className="flex flex-col md:flex-row gap-4">
             <Image
               src={job.logo}
@@ -58,6 +61,10 @@ export default async function Job() {
           <div className="flex flex-wrap md:ml-6 gap-2 items-center font-bold text-main ">
             <Tag tag={job.role} />
             <Tag tag={job.level} />
+
+            {job.tools.map((tool, idx) => (
+              <Tag key={idx} tag={tool} />
+            ))}
 
             {job.languages.map((language, idx) => (
               <Tag key={idx} tag={language} />

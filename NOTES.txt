@@ -10,7 +10,8 @@
 - Implement filtering.
     - Click on a tag on the right side of a post to add that filter, removing all posts that don't have the tag
     - Tags are shown in a bar at the intersection of the header and main page, bar has a 'clear' button
-        - TODO put an onClick on tags that add them to state (redux?) ==> display all tags from state in FilterBar
+        - --DONE-- put an onClick on tags that add them to state (redux?) ==> display all tags from state in FilterBar
+        - TODO Extract Job into a separate JobCard component for JobList to render out
 
 # Notes:
 ## NextJS:
