@@ -2,26 +2,29 @@
 
 import { RootState } from "@/redux/store";
 import { useSelector } from "react-redux";
-import Tag from "./Tag";
+import JobCard from "./JobCard";
+import { Job } from "@/type/Job";
+import { AnimatePresence } from "motion/react";
 
-interface JobListInterface {
-  data: Array<{
-    level: string;
-    languages: Array<string>;
-    tools: Array<string>;
-    role: string;
-  }>;
+interface JobListProps {
+  data: Job[];
 }
 
-export default function JobList({ data }: JobListInterface) {
-  // state tags from redux
+export default function JobList({ data }: JobListProps) {
+  // tags state from redux
   const tags = useSelector((state: RootState) => state.filters.selectedFilters);
 
-  const filteredTags = data.filter((job) => {
+  const filteredJobs = data.filter((job) => {
     // languages array + level + tools array
     const tagsToCheck = [job.role, job.level, ...job.languages, ...job.tools];
     return tags.every((selectedTag) => tagsToCheck.includes(selectedTag));
   });
 
-  return <>{console.log(filteredTags)}</>;
+  return (
+    <AnimatePresence>
+      {filteredJobs.map((job) => (
+        <JobCard job={job} key={job.id} />
+      ))}
+    </AnimatePresence>
+  );
 }

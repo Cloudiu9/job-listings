@@ -7,11 +7,13 @@
 
 - IMP TODO
 - --DONE-- Finish job component. (make it dynamic from data.json)
-- Implement filtering.
-    - Click on a tag on the right side of a post to add that filter, removing all posts that don't have the tag
-    - Tags are shown in a bar at the intersection of the header and main page, bar has a 'clear' button
+- --DONE-- Implement filtering.
+    - --DONE-- Click on a tag on the right side of a post to add that filter, removing all posts that don't have the tag
+    - --DONE-- Tags are shown in a bar at the intersection of the header and main page, bar has a 'clear' button
         - --DONE-- put an onClick on tags that add them to state (redux?) ==> display all tags from state in FilterBar
-        - TODO Extract Job into a separate JobCard component for JobList to render out
+        - --DONE-- TODO Extract Job into a separate JobCard component for JobList to render out
+- Click on job title to favorite jobs so they show on Profile page.
+- Authentication on profile?
 
 # Notes:
 ## NextJS:
@@ -53,3 +55,8 @@ const filtersSlice = createSlice({
   dispatch(addTag(tag));
 
 - Use console.log(store.getState()); to check the state.
+
+### Motion
+- Used for animating React components (can't be done with just tailwind, because React removes that component from the DOM immediately) ==> detects when children are removed but lets them play their exit animation first.
+- motion gives normal HTML elements animation capabilities.
+- AnimatePresence handles elements that React is about to remove from the DOM.
