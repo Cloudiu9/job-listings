@@ -2,6 +2,7 @@ import Image from "next/image";
 import Tag from "./Tag";
 import { Job } from "@/type/Job";
 import { motion } from "motion/react";
+import JobPosition from "./JobPosition";
 
 interface JobCardProps {
   job: Job;
@@ -27,9 +28,7 @@ export default function JobCard({ job }: JobCardProps) {
         />
         <div className="flex flex-col gap-1">
           <div className="flex gap-2 text-lg">
-            <strong id="company" className="text-main/80">
-              {job.company}
-            </strong>
+            <strong className="text-main/80">{job.company}</strong>
             <div className="flex items-center gap-2 text-white font-bold">
               {job.new && (
                 <p className="py-0.5 px-2 rounded-xl text-[12px] bg-main">
@@ -44,12 +43,7 @@ export default function JobCard({ job }: JobCardProps) {
             </div>
           </div>
 
-          <h2
-            id="position"
-            className="text-black font-bold text-lg hover:cursor-pointer hover:text-main"
-          >
-            {job.position}
-          </h2>
+          <JobPosition key={job.id} job={job} />
 
           <div className="flex gap-2 text-xs font-semibold text-gray-400">
             <p>{job.postedAt}</p>·<p>{job.contract}</p>·<p>{job.location}</p>
