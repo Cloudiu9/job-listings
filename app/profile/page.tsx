@@ -21,20 +21,31 @@ export default function Profile() {
   });
   return (
     <>
-      {favoriteJobs.length > 0 && <FilterBar />}
-      <div className="flex relative">
-        <div className="flex-1 p-4">
-          <JobList data={favoriteJobs} />
-        </div>
+      {favoriteJobs.length === 0 && (
+        <h1 className="text-center font-extrabold text-black text-6xl">
+          Click on some job titles to favorite them!
+        </h1>
+      )}
 
-        <button
-          onClick={() => dispatch(resetFavorites())}
-          className="absolute top-4 right-4 md:static md:flex md:flex-col md:place-self-start md:ml-auto text-sm md:text-lg text-black cursor-pointer hover:underline"
-        >
-          <span className="inline md:block mr-1 md:mr-0">Clear</span>
-          <span className="inline md:block">Favorites</span>
-        </button>
-      </div>
+      {favoriteJobs.length > 0 && (
+        <>
+          <FilterBar />
+
+          <div className="flex relative">
+            <div className="flex-1 p-4">
+              <JobList data={favoriteJobs} />
+            </div>
+
+            <button
+              onClick={() => dispatch(resetFavorites())}
+              className="absolute top-4 right-4 md:static md:flex md:flex-col md:place-self-start md:ml-auto text-sm md:text-lg text-black cursor-pointer hover:underline"
+            >
+              <span className="inline md:block mr-1 md:mr-0">Clear</span>
+              <span className="inline md:block">Favorites</span>
+            </button>
+          </div>
+        </>
+      )}
     </>
   );
 }
