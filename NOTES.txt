@@ -11,7 +11,7 @@
     - --DONE-- Click on a tag on the right side of a post to add that filter, removing all posts that don't have the tag
     - --DONE-- Tags are shown in a bar at the intersection of the header and main page, bar has a 'clear' button
         - --DONE-- put an onClick on tags that add them to state (redux?) ==> display all tags from state in FilterBar
-        - --DONE-- TODO Extract Job into a separate JobCard component for JobList to render out
+        - --DONE-- Extract Job into a separate JobCard component for JobList to render out
 - Click on job title to favorite jobs so they show on Profile page.
       - TODO Store favorites in localStorage
 - Authentication on profile?

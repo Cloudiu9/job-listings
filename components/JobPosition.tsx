@@ -22,8 +22,6 @@ export default function JobPosition({ job }: JobPositionProps) {
 
   const isFavorite = jobIds.includes(job.id);
 
-  console.log(jobIds);
-
   return (
     <button
       onClick={() => {

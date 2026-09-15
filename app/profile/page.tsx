@@ -23,7 +23,7 @@ export default function Profile() {
     <>
       {favoriteJobs.length === 0 && (
         <h1 className="text-center font-extrabold text-black text-6xl">
-          Click on some job titles to favorite them!
+          Click on a job title to favorite it!
         </h1>
       )}
 
@@ -37,8 +37,8 @@ export default function Profile() {
             </div>
 
             <button
+              className="absolute top-5 right-4 md:static md:flex md:flex-col md:place-self-start md:mt-12 md:-ml-10 text-sm md:text-lg text-black cursor-pointer hover:underline"
               onClick={() => dispatch(resetFavorites())}
-              className="absolute top-5 right-4 md:static md:flex md:flex-col md:place-self-start md:mt-12 md:-ml-6 md:mr-2 text-sm md:text-lg text-black cursor-pointer hover:underline"
             >
               <span className="inline md:block mr-1 md:mr-0">Clear</span>
               <span className="inline md:block">Favorites</span>
