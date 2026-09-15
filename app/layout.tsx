@@ -19,8 +19,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`h-full antialiased`}>
       <body className={`${leagueSpartan.className} min-h-full`}>
-        <div className="min-h-dvh bg-zinc-700 text-zinc-300">
-          <div className="mx-auto flex min-h-dvh w-full flex-col bg-page-bg">
+        <div className="bg-zinc-700 text-zinc-300">
+          <div className="mx-auto flex min-h-dvh flex-col bg-page-bg">
             <Header />
             <StoreProvider>{children}</StoreProvider>
             <Footer />

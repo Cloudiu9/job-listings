@@ -3,7 +3,7 @@ import JobList from "./JobList";
 
 export default async function Jobs() {
   return (
-    <div className="md:p-4">
+    <div className="md:py-4">
       <JobList data={data} />
     </div>
   );

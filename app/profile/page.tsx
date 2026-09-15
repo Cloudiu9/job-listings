@@ -38,7 +38,7 @@ export default function Profile() {
 
             <button
               onClick={() => dispatch(resetFavorites())}
-              className="absolute top-4 right-4 md:static md:flex md:flex-col md:place-self-start md:ml-auto text-sm md:text-lg text-black cursor-pointer hover:underline"
+              className="absolute top-5 right-4 md:static md:flex md:flex-col md:place-self-start md:mt-12 md:-ml-6 md:mr-2 text-sm md:text-lg text-black cursor-pointer hover:underline"
             >
               <span className="inline md:block mr-1 md:mr-0">Clear</span>
               <span className="inline md:block">Favorites</span>

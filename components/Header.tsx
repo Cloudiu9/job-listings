@@ -16,10 +16,7 @@ export default function Header() {
         <Image src="account.svg" alt="Logo" width={45} height={20} priority />
       </Link>
 
-      <nav className="flex gap-4 text-lg font-semibold text-zinc-300">
-        <Link href="/" className="hover:text-zinc-950">
-          Home
-        </Link>
+      <nav className="flex gap-4 text-[20px] font-semibold text-zinc-300">
         <Link href="jobs" className="hover:text-zinc-950">
           Jobs
         </Link>

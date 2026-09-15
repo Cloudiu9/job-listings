@@ -16,6 +16,7 @@ export default function Tag({ tag, close = false }: TagProps) {
 
   return (
     <>
+      {/* job tags */}
       {!close && (
         <button
           onClick={() => {
@@ -27,6 +28,7 @@ export default function Tag({ tag, close = false }: TagProps) {
         </button>
       )}
 
+      {/* filterbar tags */}
       {close && (
         <button
           onClick={() => {

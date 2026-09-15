@@ -10,7 +10,7 @@ export default function StoreProvider({
 }) {
   return (
     <Provider store={store}>
-      <main className="flex-1 px-4 py-8 sm:px-6 sm:py-10">{children}</main>
+      <main className="flex-1 px-4 py-8">{children}</main>
     </Provider>
   );
 }
