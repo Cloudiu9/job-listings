@@ -57,6 +57,9 @@ const filtersSlice = createSlice({
 
 - Use console.log(store.getState()); to check the state.
 
+### Redux Persist
+- Used as an alternative to native localStorage.
+
 ### Motion
 - Used for animating React components (can't be done with just tailwind, because React removes that component from the DOM immediately) ==> detects when children are removed but lets them play their exit animation first.
 - motion gives normal HTML elements animation capabilities.
