@@ -5,10 +5,18 @@ import Tag from "./Tag";
 import { RootState } from "@/redux/store";
 import { resetFilters } from "@/redux/features/filters/filtersSlice";
 import { AnimatePresence, motion } from "motion/react";
+import { useEffect } from "react";
 
 export default function FilterBar() {
   const dispatch = useDispatch();
   const tags = useSelector((state: RootState) => state.filters.selectedFilters);
+
+  useEffect(() => {
+    return () => {
+      // executes when leaving page
+      dispatch(resetFilters());
+    };
+  }, [dispatch]);
 
   return (
     <AnimatePresence>

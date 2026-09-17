@@ -1,9 +1,10 @@
 - IDEAS TODO
 - eventually have a 'scrape' button that loads live data from relevant sites instead of using data.json (or better alternative?)
-- option to save jobs in profile (state, redux)?
+- --DONE-- option to save jobs in profile (state, redux)?
+- Authentication on profile?
 
 - BUGS
-- mobile filterbar
+- --DONE-- mobile filterbar
 
 - IMP TODO
 - --DONE-- Finish job component. (make it dynamic from data.json)
@@ -12,9 +13,8 @@
     - --DONE-- Tags are shown in a bar at the intersection of the header and main page, bar has a 'clear' button
         - --DONE-- put an onClick on tags that add them to state (redux?) ==> display all tags from state in FilterBar
         - --DONE-- Extract Job into a separate JobCard component for JobList to render out
-- Click on job title to favorite jobs so they show on Profile page.
-      - TODO Store favorites in localStorage
-- Authentication on profile?
+- --DONE-- Click on job title to favorite jobs so they show on Profile page.
+      - --DONE-- Store favorites in localStorage
 
 # Notes:
 ## NextJS:
@@ -59,6 +59,7 @@ const filtersSlice = createSlice({
 
 ### Redux Persist
 - Used as an alternative to native localStorage.
+- Wrapped main from Provider inside PersistGate in order to not load empty data and wait for it to arrive from localStorage.
 
 ### Motion
 - Used for animating React components (can't be done with just tailwind, because React removes that component from the DOM immediately) ==> detects when children are removed but lets them play their exit animation first.
