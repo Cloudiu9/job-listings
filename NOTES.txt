@@ -65,3 +65,27 @@ const filtersSlice = createSlice({
 - Used for animating React components (can't be done with just tailwind, because React removes that component from the DOM immediately) ==> detects when children are removed but lets them play their exit animation first.
 - motion gives normal HTML elements animation capabilities.
 - AnimatePresence handles elements that React is about to remove from the DOM.
+
+## Testing
+
+### Vitest + React Testing Library (Unit Testing + Component Testing)
+- Vitest = test runner/framework for running tests
+- RTL = renders React components and tests user interactions with them
+
+- Unit Tests -> small pieces of logic in isolation (functions, etc)
+- Component Tests -> render a component with RTL and test observable behavior
+- RENDER -> FIND ELEMENT -> INTERACT -> ASSERT RESULT
+- Use accessible queries (getByRole, getByText, getByTextLabel)
+- Use queryByRole() for elements that are supposed to not exist.
+
+
+### Playwright (E2E Testing)
+- End-to-end testing = tests the app from user's perspective in a real browser
+
+- Can open the app, click/type/navigate and test complete user flow (login -> navigate -> submit form -> see result)
+- Typically fewer and more general, focus on critical user flows rather than every detail
+
+
+- package.json: 
+    - npm test runs tests once and exits,   
+    - npm run test:watch keeps Vitest running and reruns when files change.
