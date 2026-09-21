@@ -41,7 +41,7 @@ export default function Tag({ tag, close = false }: TagProps) {
           </div>
           <Image
             src="icon-remove.svg"
-            alt=""
+            alt="remove"
             width={28}
             height={1}
             className="object-contain p-2 bg-main rounded-r group-hover:bg-black"

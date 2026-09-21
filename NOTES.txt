@@ -77,6 +77,11 @@ const filtersSlice = createSlice({
 - RENDER -> FIND ELEMENT -> INTERACT -> ASSERT RESULT
 - Use accessible queries (getByRole, getByText, getByTextLabel)
 - Use queryByRole() for elements that are supposed to not exist.
+getBy...    → I expect it to exist
+queryBy...  → I expect it might not exist
+findBy...   → I expect it to appear asynchronously
+
+- Use screen.logTestingPlaygroundURL(); after rendering a component to generate a web link that helps find the exact valid getByRole for any element.
 
 
 ### Playwright (E2E Testing)
@@ -84,6 +89,9 @@ const filtersSlice = createSlice({
 
 - Can open the app, click/type/navigate and test complete user flow (login -> navigate -> submit form -> see result)
 - Typically fewer and more general, focus on critical user flows rather than every detail
+
+- Visual debugging equivalent to Vitest's logTestingPlaygroundURL: 
+npx playwright codegen http://localhost:3000
 
 
 - package.json: 

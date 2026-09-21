@@ -31,8 +31,6 @@ describe("FilterBar", () => {
 
     // Assert
     expect(screen.getByRole("button", { name: /react/i })).toBeInTheDocument();
-    expect(
-      screen.queryByRole("button", { name: /clear/i }),
-    ).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /clear/i })).toBeInTheDocument();
   });
 });

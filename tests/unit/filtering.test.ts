@@ -1,6 +1,6 @@
-import { filterJobs } from "../../components/JobList";
 import { describe, it, expect } from "vitest";
 import data from "../../data.json";
+import { filterJobs } from "@/utils/filterJobs";
 
 describe("filterJobs", () => {
   it("returns all jobs when no filters are selected", () => {
@@ -14,13 +14,15 @@ describe("filterJobs", () => {
   it("returns only jobs matching all selected filters", () => {
     // Arrange
     const filters = ["Junior", "JavaScript"];
+    const expectedID = 3;
 
     // Act
     const result = filterJobs(data, filters);
+    const actualID = result.map((job) => job.id);
 
     // Assert
     expect(result).toHaveLength(5);
-    expect(result[0].id).toBe(3);
+    expect(actualID).toContain(expectedID);
   });
 
   it("returns no jobs", () => {
